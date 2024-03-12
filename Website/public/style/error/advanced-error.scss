@@ -1,0 +1,42 @@
+@use '../commons' as commons;
+@use '../layouts/debug/debug-layout' as *;
+
+body {
+    .title h1 {
+        color: $title-red;
+
+        span {
+            font-size: 25px;
+        }
+    }
+
+    .content {
+        .tables {
+            .trace {
+                .row:first-child {
+                    > div {
+                        font-weight: bolder !important;
+                        text-transform: uppercase;
+                        color: $cyan !important;
+                        border-right: 1px solid $table-border;
+                    }
+                }
+
+                .row {
+                    div {
+                        font-weight: normal !important;
+                        color: black !important;
+                        border-right: 1px solid $table-row;
+                    }
+
+                    .num {
+                        color: $cyan !important;
+                        font-weight: bolder !important;
+                        width: 50px !important;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

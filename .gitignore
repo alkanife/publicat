@@ -1,0 +1,10 @@
+.DS_Store
+.idea/
+Secrets.php
+
+Website/public/user-media/*.png
+Website/public/user-media/*.PNG
+Website/public/user-media/*.jpeg
+Website/public/user-media/*.jpg
+Website/public/user-media/*.JPEG
+Website/public/user-media/*.JPG

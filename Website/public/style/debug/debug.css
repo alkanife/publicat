@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "IBM Plex Serif", serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  background: #faf9f7;
+}
+body .title {
+  width: 100vw;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+body .title h1 {
+  margin-bottom: 30px;
+}
+body .content {
+  max-width: 80vw;
+  width: 1000px;
+  margin-bottom: 200px;
+}
+body .content .tables {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+body .content .tables * {
+  font-family: monospace;
+}
+body .content .tables .table-collection {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+body .content .tables .table-collection h2 {
+  color: #005868;
+  margin-left: -20px;
+  cursor: pointer;
+  user-select: none;
+}
+body .content .tables .table-collection h2:hover {
+  text-decoration: underline;
+}
+body .content .tables .table-collection h2:before {
+  content: "v ";
+}
+body .content .tables .table-collection h2 span {
+  font-weight: 300;
+  font-style: italic;
+  font-size: 15px;
+  color: #c14a01;
+}
+body .content .tables .table-collection .table {
+  display: flex;
+  flex-direction: column;
+}
+body .content .tables .table-collection .table.error h2 {
+  color: #cc0000 !important;
+}
+body .content .tables .table-collection .table .row:nth-child(even) {
+  background: #e6e6e6;
+}
+body .content .tables .table-collection .table .row:nth-child(even) > div:first-child {
+  border-right: 1px solid #efefef;
+}
+body .content .tables .table-collection .table .row {
+  width: 100%;
+  display: flex;
+  background: #efefef;
+  border: 1px solid #e3e3e3;
+}
+body .content .tables .table-collection .table .row > div {
+  padding: 10px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+body .content .tables .table-collection .table .row > div:first-child {
+  border-right: 1px solid #e3e3e3;
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: #005868;
+  width: 200px;
+}
+body .content .tables .table-collection.disabled h2:before {
+  content: "> ";
+}
+body .content .tables .table-collection.disabled .table {
+  display: none;
+}
+body .content .tables .green {
+  color: #4e9a06 !important;
+}
+body .content .tables .red {
+  color: #cc0000 !important;
+}
+body .content .tables .gray {
+  color: #929292 !important;
+}
+body .content .tables .orange {
+  color: #c14a01 !important;
+}
+
+.title h1 {
+  margin-bottom: 60px !important;
+}
+.title .tools {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.title .tools a {
+  text-decoration: none;
+  background: #068e9a;
+  font-weight: 500;
+  color: white;
+  padding: 10px;
+  border-radius: 3px;
+}
+.title .tools a:hover {
+  text-decoration: underline;
+}
+
+.content > div {
+  margin-bottom: 80px;
+}
+.content > div h3 {
+  margin-bottom: 20px;
+}
+.content > div ul {
+  margin-left: 40px;
+}
+.content > div ul * {
+  font-family: monospace;
+}
+.content > div ul li {
+  font-size: 15px;
+}
+.content.lang {
+  max-width: 90vw;
+  width: 90vw;
+}
+.content.lang div {
+  text-transform: unset !important;
+}
+.content.lang .tables .table-collection .table .row > div:first-child {
+  width: 500px;
+}
+
+/*# sourceMappingURL=debug.css.map */

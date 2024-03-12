@@ -1,0 +1,126 @@
+@use '../../commons' as commons;
+
+.modal {
+    position: fixed;
+    top: -60px;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: 500;
+
+    display: flex;
+    justify-content: center;
+
+    opacity: 0%;
+    pointer-events: none;
+
+    transition: .3s;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    &.dangerous {
+        .btn {
+            margin-top: 20px !important;
+            border: 2px solid commons.$notification-error-color;
+            background: commons.$notification-error-color;
+            color: white;
+            width: 100% !important;
+        }
+    }
+
+    .modal-content {
+        background: commons.$background-color;
+        width: 85vw;
+        max-width: 500px;
+        margin-top: 50px;
+        margin-bottom: 100px;
+        height: fit-content;
+        border-radius: 5px;
+        padding: 20px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        position: relative;
+
+        p {
+            color: commons.$secondary-text-color;
+        }
+
+        .head {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            border-bottom: 1px commons.$common-border-color solid;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+
+            &.form-head {
+                margin-top: 50px;
+
+                padding-bottom: 40px;
+                margin-bottom: 40px;
+
+                gap: 30px;
+
+                .modal-close-button {
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    height: 15px;
+                }
+
+                .title {
+                    text-align: center;
+                    font-size: 24px;
+                }
+
+                .description {
+                    text-align: center;
+                    max-width: 400px;
+                }
+            }
+
+            &.message-head {
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                align-items: start;
+                gap: 20px;
+
+                .modal-close-button {
+                    padding-top: 5px;
+                }
+
+                .title {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .general-error {
+                display: none;
+                margin-top: 15px;
+                text-align: center;
+                font-size: 15px;
+                color: commons.$form-input-error-color;
+            }
+        }
+    }
+
+    &.opened {
+        opacity: 100%;
+        pointer-events: all;
+        top: 0;
+    }
+}

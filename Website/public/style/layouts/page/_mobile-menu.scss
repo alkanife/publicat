@@ -1,0 +1,259 @@
+@use '../../commons' as commons;
+
+#mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 60vw;
+    max-width: 250px;
+    height: 100vh;
+    background: commons.$background-color;
+    z-index: 1000;
+    transition: .3s right;
+
+    &.active {
+        right: 0;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    .title {
+        min-height: 66px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h4 {
+            font-size: 23px;
+            font-weight: 600;
+        }
+
+        button {
+            padding: 5px;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        height: 100%;
+
+        hr {
+            width: 100%;
+        }
+    }
+
+    &.not-connected {
+        .content {
+            img {
+                max-width: 150px;
+                max-height: 150px;
+                opacity: 80%;
+            }
+
+            p {
+                text-align: center;
+                color: commons.$secondary-text-color;
+            }
+
+            hr {
+                margin: 20px 0;
+            }
+
+            .connect {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                width: 100%;
+
+                button {
+                    width: 90%;
+                }
+            }
+        }
+    }
+
+    &.connected {
+        .content {
+            width: 100%;
+            justify-content: space-between;
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+            .top {
+                width: 100%;
+
+                hr {
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                }
+
+                .profile-card {
+                    width: 100%;
+                    background: white;
+                    border-radius: 3px;
+                    border: 1px solid commons.$common-border-color;
+
+                    .images {
+                        position: relative;
+
+                        .banner {
+                            width: 100%;
+                            aspect-ratio: 2/0.8;
+                            object-fit: cover;
+
+                            border-top-right-radius: 3px;
+                            border-top-left-radius: 3px;
+
+                            border-bottom: 1px solid commons.$common-border-color;
+                        }
+
+                        .profile-picture {
+                            width: 100%;
+
+                            position: absolute;
+                            bottom: -20px;
+
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            img {
+                                border-radius: 100%;
+                                height: 80px;
+
+                                aspect-ratio: 1/1;
+                                object-fit: cover;
+
+                                border: 2px solid white;
+                            }
+                        }
+                    }
+
+                    .infos {
+                        margin-top: 40px;
+                        margin-bottom: 30px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        p {
+                            text-align: center;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            width: 80%;
+
+                            &.display-name {
+                                font-size: 19px;
+                                font-weight: 600;
+                                margin-bottom: 3px;
+                                white-space: nowrap;
+                            }
+
+                            &.username {
+                                font-weight: 500;
+                                font-size: 13px;
+                                opacity: 80%;
+                            }
+                        }
+                    }
+                }
+
+                .menu {
+                    width: 100%;
+                    margin-top: 30px;
+
+                    hr {
+                        display: none;
+                    }
+
+                    .item {
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        text-decoration: none;
+                        color: black;
+                        cursor: pointer;
+
+                        display: flex;
+                        align-items: center;
+
+                        font-weight: 500;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+
+                        .icon {
+                            width: 30px;
+
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            margin-right: 10px;
+
+                            img {
+                                max-height: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .bottom {
+                width: 100%;
+
+                .write-button {
+                    text-decoration: none;
+                    color: white;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    gap: 10px;
+                    background: black;
+                    border-radius: 5px;
+
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+
+                    font-weight: 500;
+
+                    width: 100%;
+
+                    .icon {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        img {
+                            filter: invert(100%);
+                            max-height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

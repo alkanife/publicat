@@ -1,0 +1,49 @@
+@use '../commons' as commons;
+@use '../layouts/debug/debug-layout' as *;
+
+body {
+    min-height: 500px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .error {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 70px;
+        max-width: 800px;
+
+        img {
+            height: 200px;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    body {
+        .error {
+            flex-direction: column;
+            margin-left: 30px;
+            margin-right: 30px;
+            gap: 60px;
+
+            .text {
+                text-align: center;
+                gap: 30px;
+
+                h1 {
+                    font-size: 5vw;
+                }
+            }
+        }
+    }
+}

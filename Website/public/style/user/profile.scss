@@ -1,0 +1,329 @@
+@use '../commons' as commons;
+@use '../layouts/page/page-layout' as *;
+
+body {
+    padding-top: 60px;
+}
+
+.user-settings {
+    margin-bottom: 200px;
+
+    .profile-header {
+        background: white;
+        border-bottom: 1px solid commons.$common-border-color;
+        width: 100%;
+
+        .visuals {
+            position: relative;
+            user-select: none;
+
+            .banner {
+                width: 100%;
+                aspect-ratio: 2/0.8;
+                object-fit: cover;
+
+                border-bottom: 1px solid commons.$common-border-color;
+            }
+
+            .pfp-container {
+                width: 100%;
+
+                position: absolute;
+                bottom: -35px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                pointer-events: none;
+
+                img {
+                    border-radius: 100%;
+                    height: 120px;
+
+                    aspect-ratio: 1/1;
+                    object-fit: cover;
+
+                    border: 2px solid white;
+                }
+            }
+
+            .button {
+                position: absolute;
+                bottom: -45px;
+                right: 15px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                border: 2px solid black;
+                border-radius: 5px;
+
+                padding: 5px;
+                padding-left: 8px;
+                padding-right: 8px;
+
+                cursor: pointer;
+
+                &.following {
+                    p {
+                        display: none !important;
+                    }
+                }
+
+                p {
+                    display: none;
+                    font-weight: 600;
+                }
+
+                img {
+                    height: 20px;
+                }
+
+                &.settings {
+                    border: none;
+                    bottom: -50px;
+
+                    img {
+                        height: 25px;
+                        opacity: 80%;
+                    }
+                }
+            }
+        }
+
+        .contents {
+            margin-top: 50px;
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+
+                .verified {
+                    margin-left: 10px;
+
+                    img {
+                        margin-bottom: -1px;
+                        height: 20px;
+                    }
+                }
+
+                p {
+                    text-align: center;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    width: 80%;
+                    white-space: nowrap;
+
+                    &.display-name {
+                        font-size: 24px;
+                        font-weight: 600;
+                    }
+
+                    &.username {
+                        font-weight: 500;
+                        font-size: 13px;
+                        opacity: 80%;
+                    }
+                }
+            }
+
+            .infos {
+                margin-top: 40px;
+                margin-bottom: 30px;
+
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                .item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+
+                    .number {
+                        font-weight: 600;
+                    }
+
+                    .name {
+                        margin-top: 3px;
+                        font-size: 13px;
+                        opacity: 70%;
+                    }
+                }
+            }
+        }
+    }
+
+    .not-found {
+        margin-top: 50px;
+
+        display: flex;
+        justify-content: center;
+        height: 500px;
+
+        p {
+            margin-top: 50px;
+            text-align: center;
+            font-weight: 500;
+        }
+    }
+
+    .profile-body {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+
+        .additional {
+            background: white;
+            border: 1px solid commons.$common-border-color;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 30px;
+
+            p {
+                font-size: 14px;
+            }
+
+            hr {
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .body {
+            .no-publications {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 40px;
+                margin-top: 100px;
+                margin-bottom: 100px;
+
+                img {
+                    opacity: 50%;
+                    width: 100px;
+                }
+
+                p {
+                    opacity: 70%;
+                    font-weight: bold;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1000px) {
+    .user-settings {
+        .profile-header {
+            width: 90vw !important;
+            border-bottom: 1px solid commons.$common-border-color;
+            border-right: 1px solid commons.$common-border-color;
+            border-left: 1px solid commons.$common-border-color;
+
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+
+            .visuals {
+                .banner {
+                    aspect-ratio: 2/0.5 !important;
+                }
+
+                .pfp-container {
+                    img {
+                        height: 150px;
+                    }
+                }
+
+                .button {
+                    p {
+                        display: flex !important;
+                    }
+
+                    &.follow, &.following {
+                        gap: 10px;
+                    }
+
+                    &.settings {
+                        border: 2px solid black;
+
+                        a {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            text-decoration: none;
+                            color: black;
+
+                            img {
+                                height: 20px !important;
+                                opacity: 100% !important;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .contents {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .text {
+                    width: 100%;
+                }
+
+                .infos {
+                    width: 100%;
+                    max-width: 600px;
+
+                    .item {
+                        flex-direction: row;
+                        gap: 5px;
+
+                        p {
+                            margin: 0 !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .profile-body {
+            flex-direction: row;
+            gap: 50px;
+
+            .additional {
+                width: 30%;
+                height: fit-content;
+            }
+
+            .body {
+                width: 70%;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
